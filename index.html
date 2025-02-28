@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Attendance Management</div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="#" onclick="displayRecords()">Records</a></li>
+                <li><a href="#" onclick="displaySettings()">Settings</a></li>
+                <li><a href="#" onclick="displayHelp()">Help</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div id="mainContent">
+            <h2>Mark Attendance</h2>
+            <form id="attendanceForm">
+                <label for="studentName">Student Name:</label>
+                <input type="text" id="studentName" name="studentName"><br><br>
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId"><br><br>
+                <label for="studentClass">Student Class:</label>
+                <select id="studentClass" name="studentClass">
+                    <option value="Class 1">Class 1</option>
+                    <option value="Class 2">Class 2</option>
+                    <option value="Class 3">Class 3</option>
+                </select><br><br>
+                <label for="attendanceDate">Attendance Date:</label>
+                <input type="date" id="attendanceDate" name="attendanceDate"><br><br>
+                <label for="attendanceStatus">Attendance Status:</label>
+                <select id="attendanceStatus" name="attendanceStatus">
+                    <option value="present">Present</option>
+                    <option value="absent">Absent</option>
+                </select><br><br>
+                <button type="submit">Submit</button>
+            </form>
+            <h2>Dashboard</h2>
+            <div id="dashboard">
+                <p>Total Records: <span id="totalRecords">0</span></p>
+                <p>Present: <span id="presentCount">0</span></p>
+                <p>Absent: <span id="absentCount">0</span></p>
+            </div>
+        </div>
+        <div id="recordsContent" style="display: none;">
+            <h2>Attendance Records</h2>
+            <input type="search" id="searchRecords" placeholder="Search Records...">
+            <div id="attendanceRecords"></div>
+            <button onclick="displayMainContent()">Back to Main</button>
+        </div>
+        <div id="settingsContent" style="display: none;">
+            <h2>Settings</h2>
+            <form id="settingsForm">
+                <label for="theme">Select Theme:</label>
+                <select id="theme" name="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select><br><br>
+                <button type="submit">Apply</button>
+            </form>
+            <button onclick="displayMainContent()">Back to Main</button>
+        </div>
+        <div id="helpContent" style="display: none;">
+            <h2>Help</h2>
+            <p>This section will provide help and support information.</p>
+            <button onclick="displayMainContent()">Back to Main</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
